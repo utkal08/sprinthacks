@@ -1,3 +1,4 @@
+{% load static %}
 {% extends 'store/base.html' %}
 {% block content %}
         <div class="text-white mt-48 max-w-xl">
@@ -12,9 +13,10 @@
         
         </div>
 
-        <img src="images/grocery-image.png " class="rounded-full w-full xl:w-1/2 xl:absolute bottom-0
+        <img src="{% static 'images/grocery-image.png' %} " class="rounded-full w-full xl:w-1/2 xl:absolute bottom-0
                    right-20 " alt="">
-    </div>
+
+    
     
 {% endblock %}
 
