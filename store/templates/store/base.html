@@ -8,16 +8,16 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body bgcolor ="black">
+<body bgcolor ="beige">
 
     <div class="conatiner min-h-screen  bg-center bg-cover px-28 py-5 relative">
         <nav class="flex items-center">
             <img src="{% static 'images/logo-removebg-preview.png' %}" class="w-40 cursor-pointer">
             <ul class="flex-1 text-center">
-                <li class="list-none inline-block px-5"><a href="{% url 'index' %}" class="no-underline text-white">Home</a></li>
-                <li class="list-none inline-block px-5"><a href="{%url 'about' %}" class="no-underline text-white">About</a></li>
-                <li class="list-none inline-block px-5"><a href="#" class="no-underline text-white">Features</a></li>
-                <li class="list-none inline-block px-5"><a href="{% url 'contact' %}" class="no-underline text-white">Contact</a></li>
+                <li class="list-none inline-block px-5"><a href="{% url 'index' %}" class="no-underline text-black">Home</a></li>
+                <li class="list-none inline-block px-5"><a href="{%url 'about' %}" class="no-underline text-black">About</a></li>
+                <li class="list-none inline-block px-5"><a href="#" class="no-underline text-black">Features</a></li>
+                <li class="list-none inline-block px-5"><a href="{% url 'contact' %}" class="no-underline text-black">Contact</a></li>
             </ul>
             <img src="{% static 'images/cart.png' %}" class="w-8 cursor-pointer" alt="">
         </nav>
