@@ -6,20 +6,20 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     CHOICES=(('M','Manufacturer'),('R','Retailer'))
-    user=models.OneToOneField(User,on_delete=models.CASCADE,null=False)
+    user=models.OneToOneField(User,on_delete=models.CASCADE,null=True)
     USERNAME_FIELD='user.username'
-    username=models.CharField(max_length=50,default='NaN')
-    phone=models.BigIntegerField()
+    name=models.CharField(max_length=50,default='NaN')
+    phone=models.BigIntegerField(null=True)
     address=models.TextField()
     user_type=models.CharField(max_length=15,choices=CHOICES)
-    image=models.ImageField(upload_to="static/user_images")
+    image=models.ImageField(upload_to="static/user_images",default= "static/images/cart.png")
 
     def __str__(self):
         return self.name
 
 
-    def save(self,force_insert=False, force_update=False, using=None, update_fields=None):
-        super().save(force_insert, force_update, using, update_fields)
+    def save(self,force_insert=False):
+        super().save(force_insert)
         img=Image.open(self.image.path)
 
         if img.height > 300 or img.width > 300:

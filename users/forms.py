@@ -5,10 +5,11 @@ from . models import Profile
 
 class UserRegisterForm(UserCreationForm):
     
+    email=forms.EmailField()
+    fullname=forms.CharField(max_length=50)
     class Meta():
-        model=Profile
-        fields="__all__"
-        exclude=['USERNAME_FIELD','user']
+        model=User
+        fields=['username','fullname','email']
 
 
 
@@ -17,7 +18,7 @@ class UserUpdateForm(forms.ModelForm):
     class Meta():
         model=Profile
         fields="__all__"
-        exclude=['USERNAME_FIELD']
+        exclude=['USERNAME_FIELD','user','image']
 
 
 class ProfileUpdateForm(forms.ModelForm):
