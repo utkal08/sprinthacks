@@ -24,7 +24,7 @@
         <div class="media-body">
           <div class="article-metadata">
             <img class="rounded-circle article-img" src="{{product.image.url}}" alt="">
-            <a class="mr-2" href="{% url 'product' product.name %}">{{ product.name }}</a>
+            <a class="mr-2" href="{% url 'product_detail' product.name %}">{{ product.name }}</a>
           </div>
           <h2><a class="article-title" href="#">{{ product.price }}</a></h2>
           <p class="article-content">{{product.description}}</p>

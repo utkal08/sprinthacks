@@ -16,9 +16,8 @@ class UserRegisterForm(UserCreationForm):
 class UserUpdateForm(forms.ModelForm):
     
     class Meta():
-        model=Profile
-        fields="__all__"
-        exclude=['USERNAME_FIELD','user','image']
+        model=User
+        fields=['username','email']
 
 
 class ProfileUpdateForm(forms.ModelForm):

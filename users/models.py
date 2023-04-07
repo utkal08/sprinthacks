@@ -1,30 +1,25 @@
 from django.db import models
-from PIL import Image
 from django.contrib.auth.models import User
+from PIL import Image
 # Create your models here.
 
 
 class Profile(models.Model):
-    CHOICES=(('M','Manufacturer'),('R','Retailer'))
     user=models.OneToOneField(User,on_delete=models.CASCADE,null=True)
-    USERNAME_FIELD='user.username'
-    name=models.CharField(max_length=50,default='NaN')
-    phone=models.BigIntegerField(null=True)
-    address=models.TextField()
-    user_type=models.CharField(max_length=15,choices=CHOICES)
-    image=models.ImageField(upload_to="static/user_images",default= "static/images/cart.png")
+    image=models.ImageField(default="static/images/logo.png",upload_to="static/images/user_images")
 
     def __str__(self):
-        return self.name
+        return f"{self.user.username} Profile"
 
 
-    def save(self,force_insert=False):
-        super().save(force_insert)
+    def save(self,force_insert=False, force_update=False, using=None, update_fields=None):
+        super().save(force_insert, force_update, using, update_fields)
         img=Image.open(self.image.path)
 
         if img.height > 300 or img.width > 300:
             output_size=(300,300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
 
     
