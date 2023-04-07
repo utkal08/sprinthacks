@@ -135,3 +135,7 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 
 LOGIN_REDIRECT_URL='index'
 
+STRIPE_PUBLISHABLE_KEY = 'your-publishable-key'
+STRIPE_SECRET_KEY = 'your-secret-key'
+
+

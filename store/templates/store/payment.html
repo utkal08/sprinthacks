@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Payment Form</h2>
+<form action="{% url 'payment' %}" method="POST">
+    {% csrf_token %}
+    <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="{{ settings.STRIPE_PUBLISHABLE_KEY }}"
+        data-amount="1000"
+        data-name="Example.com"
+        data-description="Example charge"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto"
+        data-currency="usd">
+    </script>
+</form>
+{% endblock %}
