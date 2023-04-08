@@ -1,0 +1,5 @@
+Django==4.1.6
+Pillow==9.5.0
+stripe==5.4.0
+django_crispy_forms=1.14.0
+gunicorn=20.0.4
