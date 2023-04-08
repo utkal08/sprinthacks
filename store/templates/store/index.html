@@ -26,8 +26,7 @@
             <img class="rounded-circle article-img" src="{{product.image.url}}" alt="">
             <a class="mr-2" href="{% url 'product_detail' product.name %}">{{ product.name }}</a>
           </div>
-          <h2><a class="article-title" href="#">{{ product.price }}</a></h2>
-          <p class="article-content">{{product.description}}</p>
+          <h2><a class="article-title" href="#">Price : Rs.{{ product.price }}</a></h2>
         </div>
       </article>
     {% empty %}
