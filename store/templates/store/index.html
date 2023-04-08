@@ -18,24 +18,26 @@
     
 {% endblock %}
 {% block body %}
+<table>
 {% for product in products %}
-<div class="text-white mt-48 max-w-xl">
+
+<table class="text-white mt-48 max-w-xl ">
     <article class="media content-section">
-        <div class="media-body">
-          <div class="article-metadata">
-            <img class="rounded-circle article-img" src="{{product.image.url}}" alt="">
-            <a class="mr-2" href="{% url 'product_detail' product.name %}">{{ product.name }}</a>
+        <div class="media-body grid grid grid-flow-col">
+          <div class="article-metadata ">
+            <a href="{% url 'product_detail' product.name %}"><img class="rounded-circle article-img" src="{{product.image.url}}" alt=""></a>
+            <a class="mr-2 text-white" href="{% url 'product_detail' product.name %}">{{ product.name }}</a>
           </div>
           <h2><a class="article-title" href="#">Price : Rs.{{ product.price }}</a></h2>
+          <h2><a class="article-title text-white" href="{% url 'product_detail' product.name %}">{{ product.price }}</a></h2>
+          <a  class="article-content text-white" href="{% url 'product_detail' product.name %}">{{product.description}}</a>
         </div>
       </article>
     {% empty %}
 
     {% endfor %}
+    </table>
     
 </div>
 
 {% endblock body %}
-
-
-

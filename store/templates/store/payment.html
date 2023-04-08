@@ -1,7 +1,7 @@
 {% extends 'store/base.html' %}
 {% load static %}
 {% block content %}
-
+<div class="text-white">
 <h2>Payment Form</h2>
 <form action="{% url 'payment' %}" method="POST">
     {% csrf_token %}
@@ -16,4 +16,5 @@
         data-currency="usd">
     </script>
 </form>
+</div>
 {% endblock %}
