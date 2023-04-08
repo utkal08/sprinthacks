@@ -2,16 +2,21 @@
 {% load static %}
 {% block content %}
 
-
+<br><br><br><br><br><br><br>
     <div class="text-white">
         <form action="" method="POST">
             {% csrf_token %}
+            <br><br>
+            <div class="flex justify-center">
             <fieldset class = "form-group " >
                 <legend class="border-bottom mb-4 ">Order</legend>
                 {{form}}
             </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit"><a href="{% url 'shipping' %}"> Place Order </a></button>
+        </div>
+            <br><br><br><br><br>
+            <div class="">
+                <button class="btn btn-outline-info bg-yellow-300 rounded-3xl px-8 py-3 font-medium inline-block mr-4 hover:bg-transparent
+                hover:border-yellow-300 hover:text-white duration-300 hover:border border border-transparent" type="submit"><a href="{% url 'shipping' %}"> Place Order </a></button>
             </div>
         </form>
     </div>

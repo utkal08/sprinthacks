@@ -3,11 +3,11 @@
 {% block content %}
         <div class="text-white mt-48 max-w-xl">
             <h1 class="text-6xl font-semibold leading-normal">Daily Products  <br> delivery within <span>24 hours</span></h1>
-            <p>Inventory IQ offers a wide range of products, including fresh products, dairy-products <br><br><br><br></p>
+            <p>Inventree offers a wide range of products, including fresh products, dairy-products <br><br><br><br></p>
         <div>
-            <a href="#" class="bg-yellow-300 rounded-3xl px-8 py-3 font-medium inline-block mr-4 hover:bg-transparent
-             hover:border-yellow-300 hover:text-white duration-300 hover:border border border-transparent">Order Now</a>
-            <a href="#">Check delivery at your pincode<span class="inline-block rotate-90 font-extrabold">&#10148</span></a>
+            <a href="#products" class="bg-yellow-300 rounded-3xl px-8 py-3 font-medium inline-block mr-4 hover:bg-transparent
+             hover:border-yellow-300 hover:text-white duration-300 hover:border border border-transparent">Shop Now</a>
+            <p>Currentl delivering only IN MURADNAGAR<span class="inline-block rotate-90 font-extrabold">&#10148</span></p>
             </div>
         
         
@@ -19,18 +19,19 @@
 {% endblock %}
 {% block body %}
 <table>
+  <br><br><br><br>
 {% for product in products %}
 
 <table class="text-white mt-48 max-w-xl ">
     <article class="media content-section">
         <div class="media-body grid grid grid-flow-col">
           <div class="article-metadata ">
-            <a href="{% url 'product_detail' product.name %}"><img class="rounded-circle article-img" src="{{product.image.url}}" alt=""></a>
-            <a class="mr-2 text-white" href="{% url 'product_detail' product.name %}">{{ product.name }}</a>
+            <a href="{% url 'product_detail' product.name %}" name="products"><img class="rounded-circle article-img px-40" src="{{product.image.url}}" alt=""></a>
+            <a class="mr-2 text-white px-40" href="{% url 'product_detail' product.name %}">{{ product.name }}</a>
           </div>
-          <h2><a class="article-title" href="#">Price : Rs.{{ product.price }}</a></h2>
-          <h2><a class="article-title text-white" href="{% url 'product_detail' product.name %}">{{ product.price }}</a></h2>
-          <a  class="article-content text-white" href="{% url 'product_detail' product.name %}">{{product.description}}</a>
+          <h2> Price : Rs.{{ product.price }}</h2>
+          <h2><a class="article-title text-white" href="{% url 'product_detail' product.name %}"></a></h2>
+          <p class="article-content text-white pl-20" >{{product.description}}</p>
         </div>
       </article>
     {% empty %}

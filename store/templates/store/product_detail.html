@@ -1,19 +1,31 @@
 {% extends "store/base.html" %}
 {% load static %}
 {% block content %}
+<br><br><br><br><
 
-        <div class="text-white">
+        <div class="text-white left-1/2 right-1/2">
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <img src="{{product.image.url}}" alt="">
+                <div class="flex justify-center" >
+
+                <img src="{{product.image.url}}" class="" alt="">
+                <br><br><br>
             </div>
-            <h2 class="article-title">{{ product.name }}</h2>
+            <div class="flex justify-center">
+            <h2 class="article-title text-6xl text-bold">{{ product.name }}</h2>
+        </div>
+            <br><br><br>
+            <div class="flex justify-center">
             <p class="article-content">{{ product.description }}</p>
-
-              <p> <a class = "btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'order' %}">Order now</a></p>
-
+                    <br><br><br>
+                </div>
+                <div class="flex justify-center">
+              <p> <a class = "btn btn-secondary btn-sm mt-1 mb-1 bg-pink-300 rounded-3xl px-8 py-3 font-medium inline-block mr-4 hover:bg-transparent
+                hover:border-purple-300 hover:text-white duration-300 hover:border border border-transparent " href="{% url 'order' %}">Order now</a></p>
+            </div>
         </div>
     </article>
         </div>
-{% endblock content %}
+{% endbloc
+k content %}

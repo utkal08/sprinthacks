@@ -1,8 +1,11 @@
 {% extends 'store/base.html' %}
 {% load static %}
 {% block content %}
+<br><br><br><br><br><br>
 <div class="text-white">
-<h2>Payment Form</h2>
+<h2 class="bg-yellow-300 rounded-3xl px-8 py-3 font-medium inline-block mr-4 hover:bg-transparent
+hover:border-yellow-300 hover:text-white duration-300 hover:border border border-transparent">Payment Form</h2>
+<br><br><br><br>
 <form action="{% url 'payment' %}" method="POST">
     {% csrf_token %}
     <script
